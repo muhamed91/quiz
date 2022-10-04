@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, map } from 'rxjs'
 
 
 @Injectable({
@@ -13,7 +14,7 @@ export class RestApiService {
    // HttpClient API get() method => Fetch employees list
    getCountries(): Observable<any> {
     return this.http
-      .get<any>(this.apiURL + '/all')
+      .get<any>(this.apiURL + '/all').pipe(map((el) => el.slice(0, 10)))
   }
 
   constructor(private http: HttpClient) { }

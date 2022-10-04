@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RestApiService } from 'src/app/services/rest-api.service';
 
 @Component({
   selector: 'app-quiz-card',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuizCardComponent implements OnInit {
 
-  constructor() { }
+  countries:[] = [];
+  capitalCity: any= []
+
+  constructor(private countriesService: RestApiService) { }
 
   ngOnInit(): void {
+    this.countriesService.getCountries().subscribe((d) => {
+
+      for (const key in d) {
+        const element = d[key];
+
+        this.capitalCity.push(element.capital[0])
+      
+        
+      }      
+
+    });
+
+    console.log(this.capitalCity);
+    
+  
   }
 
 }

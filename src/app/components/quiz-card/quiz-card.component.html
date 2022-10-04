@@ -4,7 +4,8 @@
         <img src="../../../assets/images/undraw_adventure_4hum 1.svg">
     </div>
     <div class="quiz-card">
-        <h2 class="quiz-card-title">Kuala Lumpur is the capital of</h2>
+        <small  *ngIf="!capitalCity.length">Loading Content...</small>
+        <h2 *ngIf="capitalCity.length" class="quiz-card-title">{{capitalCity[0]}} is the capital of</h2>
 
         <div class="choice-box">
             <div class="choice-flex">
