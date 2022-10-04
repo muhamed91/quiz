@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+ 
+$p-color: #2F527B;
+
+* {
+     box-sizing: border-box;
+     padding: 0;
+     margin: 0;
+ }
+
+ body {
+    font-family: 'Poppins', sans-serif;
+ }
+
+.bg{
+    background-image: url('./assets//images/background.png');
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
